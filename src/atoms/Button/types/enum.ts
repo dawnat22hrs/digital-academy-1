@@ -1,0 +1,4 @@
+export enum BUTTON_VARIANT {
+    PRIMARY= 'PRIMARY',
+    SECONDARY = 'SECONDARY',
+}
