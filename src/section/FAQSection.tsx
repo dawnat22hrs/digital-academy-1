@@ -4,7 +4,7 @@ import {FAQ} from "../organism/FAQ.tsx";
 
 export const FAQSection = () => {
     return (
-        <Section>
+        <Section id={'faq'}>
             <TitleBlock>
                 <Img src={'src/assets/Illustration 01.png'}/>
                 <Title45 style={{lineHeight: '54px'}}>Frequently Asked <br /><SelectWord>Questions</SelectWord></Title45>

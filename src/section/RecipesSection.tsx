@@ -30,7 +30,7 @@ const model = [
 
 export const RecipesSection = () => {
     return (
-        <Section>
+        <Section id={'recipes'}>
             <Container>
                 <Title45>Our Top <SelectWord>Recipes</SelectWord></Title45>
                 <RecipesContainer>
