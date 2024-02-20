@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 import {CATEGORY_VARIANT} from "./types/enum.ts";
 
 interface ICategoryChip {
-    variant: CATEGORY_VARIANT
+    variant: CATEGORY_VARIANT | null | undefined
 }
 export const CategoryChip = ({variant}: ICategoryChip) => {
     return (
         <Chip>
-            {variant}
+            {variant?.toUpperCase()}
         </Chip>
     )
 }
@@ -25,4 +25,5 @@ const Chip = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 30px;
 `

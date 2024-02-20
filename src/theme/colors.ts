@@ -5,6 +5,8 @@ export const COLORS = {
 
   transsport_black: '#201F1F',
   transsport_black30: '#201F1F33',
+
+  signalBlack: '#252525',
   
   grayishPurpleBlue: '#323142',
   grayishPurpleBlue20: '#32314222',
@@ -23,6 +25,8 @@ export const COLORS = {
   gainsborough: '#E5E5E5B2',
   grayWindow: '#ACADB9',
   deepYellowPink: '#F1534E',
+  telegrey: '#8D8D8D',
+  manatee: '#8E97A6',
 }
 
 export type Colors = {[Property in keyof typeof COLORS]: string};

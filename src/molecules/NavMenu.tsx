@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 
-
 export enum NAV_MENU_VARIANT {
     HEADER = 'HEADER',
     FOOTER = 'FOOTER',
@@ -14,43 +13,34 @@ export const NavMenu = ({variant}: INavMenu) => {
         href: string;
     }
 
-    const headerItem: NavItem[] = [
+    const items: NavItem[] = [
         {
             title: 'Recipes',
-            href: '#'
+            href: '/#recipes'
+        },
+        {
+            title: 'FAQ',
+            href: '/#faq'
         },
         {
             title: 'Blog',
-            href: '#'
+            href: '/blog'
         },
     ]
-
-    const footerItem: NavItem[] = [
-        {
-            title: 'About us',
-            href: '#'
-        },
-        {
-            title: 'Contact',
-            href: '#'
-        },
-    ]
-
-    const navItems: NavItem[] = variant === NAV_MENU_VARIANT.HEADER ? headerItem : footerItem
 
     return (
         <UnorderedList variant={variant}>
             {
-                navItems.map((item) => (
+                items.map((item) => (
                     <ListItem key={item.title}>
-                        <Link href={item.href}>{ item.title }</Link>
+                        <Link href={item.href}>{item.title}</Link>
                     </ListItem>
                 ))
             }
         </UnorderedList>
     )
 }
-const UnorderedList = styled.ul<{variant: NAV_MENU_VARIANT}>`
+const UnorderedList = styled.nav<{variant: NAV_MENU_VARIANT}>`
   font-family: 'Inter';
   font-weight: 500;
   font-size: 17.83px;

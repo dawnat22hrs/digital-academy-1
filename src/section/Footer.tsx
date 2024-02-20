@@ -5,22 +5,22 @@ import {NAV_MENU_VARIANT, NavMenu} from "../molecules/NavMenu.tsx";
 export const Footer = () => {
     const followLinks = [
         {
-            src: 'src/assets/Inst.png',
+            src: '../src/assets/Inst.png',
             href: '#',
             alt: 'link to Instagram'
         },
         {
-            src: 'src/assets/In.png',
+            src: '../src/assets/In.png',
             href: '#',
             alt: 'link to Linked in'
         },
         {
-            src: 'src/assets/Facebook.png',
+            src: '../src/assets/Facebook.png',
             href: '#',
             alt: 'link to Facebook'
         },
         {
-            src: 'src/assets/X.png',
+            src: '../src/assets/X.png',
             href: '#',
             alt: 'link to X (Twitter)'
         },
@@ -29,11 +29,11 @@ export const Footer = () => {
         <FooterWrapper>
             <FooterContent>
                 <FooterContentTop>
-                    <Logo size={LOGO_SIZE.LARGE}/>.
+                    <Logo size={LOGO_SIZE.LARGE}/>
                     <NavMenu variant={NAV_MENU_VARIANT.FOOTER}/>
                 </FooterContentTop>
                 <FooterContentBottom>
-                    <Text>© 2023 EATLY All Rights Reserved.</Text>
+                    <Text>© 2024 EATLY All Rights Reserved.</Text>
                     <FollowLinks>
                         {
                             followLinks.map((link) => (

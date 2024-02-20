@@ -3,4 +3,5 @@ export interface IButton {
     variant: BUTTON_VARIANT,
     children: string,
     endIcon?: JSX.Element,
+    startIcon?: JSX.Element,
 }
