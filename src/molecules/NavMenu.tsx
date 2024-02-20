@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 
-
 export enum NAV_MENU_VARIANT {
     HEADER = 'HEADER',
     FOOTER = 'FOOTER',
@@ -34,7 +33,7 @@ export const NavMenu = ({variant}: INavMenu) => {
             {
                 items.map((item) => (
                     <ListItem key={item.title}>
-                        <Link href={item.href}>{ item.title }</Link>
+                        <Link href={item.href}>{item.title}</Link>
                     </ListItem>
                 ))
             }

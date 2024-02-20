@@ -20,3 +20,19 @@ export const Title50 = styled.h2`
 export const SelectWord = styled.span`
   color: #5C4EAE;
 `
+export const  SubtitleTelegrey = styled.span`
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: ${({ theme }) => theme.colors.telegrey};
+  cursor: pointer;
+`
+export const Body = styled.span`
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #081420;
+  cursor: pointer;
+`

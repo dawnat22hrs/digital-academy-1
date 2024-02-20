@@ -11,7 +11,7 @@ export interface ILogo {
 export const Logo = ({size}: ILogo) => {
     return (
         <LogoWrapper size={size}>
-            <Img size={size} src={'src/assets/Logo.png'} alt="Логотип"/>
+            <Img size={size} src={'../src/assets/Logo.png'} alt="Логотип"/>
             <LogoText size={size}>eatly</LogoText>
         </LogoWrapper>
     )

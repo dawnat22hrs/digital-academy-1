@@ -1,27 +1,21 @@
 import styled from "@emotion/styled";
-import {CategoryChip, CATEGORY_VARIANT} from "../atoms/categoryChip";
+import {CategoryChip} from "../atoms/categoryChip";
+import {IRecipesCard} from "../types/interfaces.ts";
 
-export interface IRecipesCard {
-    img: string,
-    categoryChip: CATEGORY_VARIANT,
-    min: number,
-    rating: number,
-    title: string,
-}
-export const RecipesCard = ({img, categoryChip, rating, min, title}:IRecipesCard) => {
+export const RecipesCard = ({image, categoryChip, rating, cookTimeMinutes, name}:IRecipesCard) => {
     return (
         <Card>
-            <HeroImg src={img}/>
+            <HeroImg src={image}/>
             <Container>
                 <CategoryChip variant={categoryChip} />
                 <TextContainer>
-                    <Title>{title}</Title>
+                    <Title>{name}</Title>
                     <AddMark id="mark">
                         <BookMark src={'src/assets/Book Mark.png'}/>
                     </AddMark>
                 </TextContainer>
                 <Clarification>
-                    <Time>{min}min</Time>
+                    <Time>{cookTimeMinutes}min</Time>
                     <RatingImg src={'src/assets/Star.png'}/>
                     {rating}
                 </Clarification>
@@ -64,10 +58,11 @@ const TextContainer = styled.div`
 `
 const Title = styled.span`
   font-family: Poppins;
-  font-size: 26px;
+  font-size:20px;
   font-weight: 600;
   line-height: 42px;
   color: #323142;
+  white-space: nowrap;
 `
 const Clarification = styled.div`
   display: flex;
