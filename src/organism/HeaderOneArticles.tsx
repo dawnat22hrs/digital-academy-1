@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {IPostItem} from "../types/interfaces.ts";
 import {useGetSingleUserQuery} from "../api/api.ts";
 import {UserOneArtical} from "../molecules/UserOneArtical.tsx";
-import {ReactionOneArtical} from "../molecules/PurchasesItem/ReactionOneArtical.tsx";
+import {ReactionOneArtical} from "../molecules/ReactionOneArtical.tsx";
 
 export const HeaderOneArticles = ({title, reactions, tags, userId}: IPostItem) => {
     const {data} = useGetSingleUserQuery(userId)

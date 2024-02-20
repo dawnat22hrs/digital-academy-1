@@ -33,7 +33,7 @@ export const Footer = () => {
                     <NavMenu variant={NAV_MENU_VARIANT.FOOTER}/>
                 </FooterContentTop>
                 <FooterContentBottom>
-                    <Text>© 2023 EATLY All Rights Reserved.</Text>
+                    <Text>© 2024 EATLY All Rights Reserved.</Text>
                     <FollowLinks>
                         {
                             followLinks.map((link) => (

@@ -1,14 +1,11 @@
 import styled from "@emotion/styled";
-import {SelectWord, Title45} from "../utils/style.ts";
 import {FAQ} from "../organism/FAQ.tsx";
+import {FAQTitleBlock} from "../molecules/FAQTitleBlock.tsx";
 
 export const FAQSection = () => {
     return (
         <Section id={'faq'}>
-            <TitleBlock>
-                <Img src={'src/assets/Illustration 01.png'}/>
-                <Title45 style={{lineHeight: '54px'}}>Frequently Asked <br /><SelectWord>Questions</SelectWord></Title45>
-            </TitleBlock>
+            <FAQTitleBlock />
             <FAQ />
         </Section>
     )
@@ -22,10 +19,4 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
-`
-const TitleBlock = styled.div`
-`
-const Img = styled.img`
-  position: relative;
-  left: 230px;
 `

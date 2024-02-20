@@ -1,30 +1,16 @@
 import styled from "@emotion/styled";
-import {RecipesCard} from "../organism/RecipesCard.tsx";
 import {SelectWord, Title45} from "../utils/style.ts";
 import {useGetRecipesQuery} from "../api/api.ts";
-import {ClipLoader} from "react-spinners";
-import {IRecipesCard} from "../types/interfaces.ts";
-import {CATEGORY_VARIANT} from "../atoms/categoryChip";
+import {RecipesContainer} from "../organism/RecipesContainer";
 
 export const RecipesSection = () => {
-
     const { data } = useGetRecipesQuery(null)
+
     return (
         <Section id={'recipes'}>
             <Container>
                 <Title45>Our Top <SelectWord>Recipes</SelectWord></Title45>
-                <RecipesContainer data={data}>
-                    {
-                        data ?
-                            data.recipes.map((item: IRecipesCard) => (
-                                <RecipesCard key={item.id} {...item} categoryChip={ item.mealType ? item.mealType[0] as CATEGORY_VARIANT : null}/>
-                            ))
-                            : <ClipLoader
-                                    color={'#000'}
-                                    size={'40px'}
-                                />
-                    }
-                </RecipesContainer>
+                <RecipesContainer data={data?.recipes} />
             </Container>
         </Section>
     )
@@ -42,11 +28,4 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items:center;
-`
-const RecipesContainer = styled.div<{data: any}>`
-  display: flex;
-  width: 1248.95px;
-  justify-content: ${props => props.data ? 'space-between'  : 'center'};
-  margin: 85.7px 0 65.7px;
-  align-items: center;
 `

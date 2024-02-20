@@ -11,24 +11,20 @@ export default function App() {
   return (
     <ThemeProvider theme={THEME}>
       <AppWrapper>
-              <Header />
-              <AppMain>
-                  <RouterProvider router={router} />
-              </AppMain>
-              <Footer />
+          <Header />
+          <AppMain>
+              <RouterProvider router={router} />
+          </AppMain>
+          <Footer />
       </AppWrapper>
     </ThemeProvider>
   )
 }
 
 const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background: ${({ theme }) => theme.colors.bg_light};
   overflow-x: hidden !important;
 `
 
 const AppMain = styled.main`
-  flex-grow: 1;
 `

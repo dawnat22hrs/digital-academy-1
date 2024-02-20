@@ -56,7 +56,7 @@ export const CustomerCarousel = () => {
                                 <DotContainer>
                                     {sortedData?.map((slide: ICarouselItem, slideIndex: number) => (
                                         <Dot
-                                            key={slideIndex}
+                                            key={slide.id}
                                             onClick={() => goToSlide(slideIndex)}
                                         >
                                             ●

@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 import {CATEGORY_VARIANT} from "./types/enum.ts";
 
 interface ICategoryChip {
-    variant: CATEGORY_VARIANT
+    variant: CATEGORY_VARIANT | null | undefined
 }
 export const CategoryChip = ({variant}: ICategoryChip) => {
     return (
         <Chip>
-            {variant.toUpperCase()}
+            {variant?.toUpperCase()}
         </Chip>
     )
 }

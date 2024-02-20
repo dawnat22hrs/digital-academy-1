@@ -12,7 +12,7 @@ export const PurchasesItem = ({variant, percent, currentMoney}: IPurchasesItem) 
             <ItemHeader>
                 <Marker variant={variant}>
                     {
-                        variant === PURCHASES_DATA_VARIANT.EXPENSE ? <ImgMarker src={'src/assets/wallet.png'}/> : <ImgMarker src={'src/assets/money.png'}/>
+                        variant === PURCHASES_DATA_VARIANT.EXPENSE ? <ImgMarker src={'src/assets/wallet.png'} alt={'wallet'}/> : <ImgMarker src={'src/assets/money.png'} alt={'money'}/>
                     }
                 </Marker>
                 <TextWrapper>

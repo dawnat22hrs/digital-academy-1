@@ -28,7 +28,7 @@ const Item = styled.div<{variant: COMMENTS_VARIANT | undefined}>`
   box-shadow: 5.94564151763916px 71.34769439697266px 35.67384719848633px 0px ${({ theme }) => theme.colors.grayishPurpleBlue20};
   padding: 38px 43px 41px;
   position: relative;
-  margin: 46px;
+  margin: ${props => props.variant === COMMENTS_VARIANT.LARGE ? '0' :  '46'}px;
 `
 const TopBlock = styled.div`
   display: flex;
