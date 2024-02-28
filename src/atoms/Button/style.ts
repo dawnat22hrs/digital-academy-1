@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import {BUTTON_VARIANT} from "./types/enum.ts";
+import {BUTTON_SIZE, BUTTON_VARIANT} from "./types/enum.ts";
 
-const BaseButton = styled.button`
+const BaseButton = styled.button<{size: BUTTON_SIZE | undefined}>`
   height: 59px;
   border-radius: 12.41px;
-  padding: 0 30px;
+  padding: 0 ${props => props.size === BUTTON_SIZE.LARGE ? '219' : '30'}px;
   width: fit-content;
   font-family: Poppins;
   font-size: 16px;
