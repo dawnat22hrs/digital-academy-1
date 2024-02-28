@@ -23,4 +23,5 @@ const TextBlock = styled.div`
   flex-direction: column;
   align-items: start;
   margin-left: 14.24px;
+  white-space: nowrap;
 `

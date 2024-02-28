@@ -26,6 +26,13 @@ export const api = createApi({
         getSingleUser: builder.query({
             query: (id: number) => `/users/${id}`
         }),
+        createComment: builder.mutation({
+            query: comment => ({
+                body: comment,
+                url: '/comments/add',
+                method: 'POST',
+            })
+        })
     })
 })
 
@@ -36,4 +43,5 @@ export const {
     useGetCommentByPostIdQuery,
     useGetSinglePostQuery ,
     useGetSingleUserQuery,
+    useCreateCommentMutation,
 } = api
