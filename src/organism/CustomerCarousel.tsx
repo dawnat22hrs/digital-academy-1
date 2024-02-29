@@ -17,8 +17,6 @@ export const CustomerCarousel = () => {
     const timerRef = useRef<number>(0)
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    console.log(data)
-
     const goToNext = useCallback(() => {
         const isLastSlide = currentIndex === sortedData?.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
