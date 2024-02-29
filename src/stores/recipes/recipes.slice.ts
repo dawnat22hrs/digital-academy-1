@@ -1,14 +1,18 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit"
 
-const initialState = []
+interface IState {
+
+}
+
+const initialState: IState[] = []
 
 export const recipesSlice = createSlice({
     name: 'recipes',
     initialState,
     reducers: {
         getRecipes: (state, action) => {
-            const recipes = action.payload
-            state.push(recipes)
+            state.push(action.payload)
+            console.log(action.payload)
         }
     }
 })

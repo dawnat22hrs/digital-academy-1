@@ -29,7 +29,7 @@ export const BlogPosts = () => {
                     ?
                         <BlogsItems>
                             {
-                                    data.posts.map((item: IPostItem) => <PostItem key={item.id} {...item}/>)
+                                    data.posts.map((item: IPostItem) => <PostItem data-testid="post-item" key={item.id} {...item}/>)
                             }
                         </BlogsItems>
                     :
@@ -43,7 +43,7 @@ export const BlogPosts = () => {
                 <Prev onClick={() => currentPage === 1 ? null : controlTable(CONTROL_PAGE.PREV)} disable={currentPage === 1}>
                     <PaginationArrow />
                 </Prev>
-                <Next onClick={() =>  checkDisable() ? null : controlTable (CONTROL_PAGE.NEXT)} disable={checkDisable()}>
+                <Next onClick={() =>  checkDisable() ? null : controlTable (CONTROL_PAGE.NEXT)} disable={checkDisable()} data-testid="next-btn" disabled={!checkDisable()}>
                     <PaginationArrow />
                 </Next>
             </PaginationBlock>
@@ -71,7 +71,7 @@ const PaginationBlock = styled.div`
   justify-content: space-between;
   margin-top: 85px;
 `
-const Next = styled.div<{disable: boolean | undefined}>`
+const Next = styled.button<{disable: boolean | undefined}>`
   color: ${props => props.disable ? '#CECECE' : '#605E5E'};
 `
 const Prev = styled.div<{disable: boolean}>`

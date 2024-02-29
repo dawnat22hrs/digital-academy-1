@@ -17,14 +17,18 @@ export const CustomerCarousel = () => {
     const timerRef = useRef<number>(0)
     const [currentIndex, setCurrentIndex] = useState(0)
 
+    console.log(data)
+
     const goToNext = useCallback(() => {
         const isLastSlide = currentIndex === sortedData?.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
         setCurrentIndex(newIndex)
     }, [currentIndex, sortedData])
+
     const goToSlide = (slideIndex: number) => {
         setCurrentIndex(slideIndex)
     }
+
     const getSlidesContainerStylesWithWidth = () => ({
         ...slidesContainerStyles,
         width: 1800,
@@ -37,7 +41,7 @@ export const CustomerCarousel = () => {
         }
         timerRef.current = setTimeout(() => {
             goToNext()
-        }, 2000)
+        }, 2000) as any
 
         return () => clearTimeout(timerRef.current)
     }, [goToNext])
@@ -56,7 +60,7 @@ export const CustomerCarousel = () => {
                                 <DotContainer>
                                     {sortedData?.map((slide: ICarouselItem, slideIndex: number) => (
                                         <Dot
-                                            key={slideIndex}
+                                            key={slide.id}
                                             onClick={() => goToSlide(slideIndex)}
                                         >
                                             ●

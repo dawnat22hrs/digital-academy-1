@@ -4,7 +4,6 @@ import {SelectWord, Title45} from "../utils/style.ts";
 import {useGetRecipesQuery} from "../api/api.ts";
 import {ClipLoader} from "react-spinners";
 import {IRecipesCard} from "../types/interfaces.ts";
-import {CATEGORY_VARIANT} from "../atoms/categoryChip";
 
 export const RecipesSection = () => {
 
@@ -17,7 +16,7 @@ export const RecipesSection = () => {
                     {
                         data ?
                             data.recipes.map((item: IRecipesCard) => (
-                                <RecipesCard key={item.id} {...item} categoryChip={ item.mealType ? item.mealType[0] as CATEGORY_VARIANT : null}/>
+                                <RecipesCard key={item.id} {...item} categoryChip={item?.mealType[0]}/>
                             ))
                             : <ClipLoader
                                     color={'#000'}

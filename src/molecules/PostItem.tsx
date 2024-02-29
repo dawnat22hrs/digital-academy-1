@@ -11,7 +11,7 @@ export const PostItem = ({title, tags, reactions,body, id, userId}: IPostItem) =
   const {data} = useGetSingleUserQuery(userId)
     return (
         <Link to={`/artical/${id}`} style={{textDecoration: 'none'}}>
-        <Item>
+        <Item  data-testid="post-item">
             <TitleBlock>
                 <Title>{title}</Title>
             </TitleBlock>
