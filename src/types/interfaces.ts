@@ -29,7 +29,7 @@ export interface IRecipesCard {
     servings?: number,
     tags?: string[],
     userId?: number,
-    categoryChip?: CATEGORY_VARIANT | null,
+    categoryChip?: any,
 }
 
 export interface IPostItem {

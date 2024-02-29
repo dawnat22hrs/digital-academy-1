@@ -4,19 +4,19 @@ import {IRecipesCard} from "../types/interfaces.ts";
 
 export const RecipesCard = ({image, categoryChip, rating, cookTimeMinutes, name}:IRecipesCard) => {
     return (
-        <Card>
-            <HeroImg src={image}/>
+        <Card data-testid="recipe-card">
+            <HeroImg src={image} alt="recipe-image"/>
             <Container>
                 <CategoryChip variant={categoryChip} />
                 <TextContainer>
                     <Title>{name}</Title>
-                    <AddMark id="mark">
-                        <BookMark src={'src/assets/Book Mark.png'}/>
+                    <AddMark id="mark" data-testid="bookmark">
+                        <BookMark src={'src/assets/Book Mark.png'} alt="bookmark"/>
                     </AddMark>
                 </TextContainer>
                 <Clarification>
                     <Time>{cookTimeMinutes}min</Time>
-                    <RatingImg src={'src/assets/Star.png'}/>
+                    <RatingImg src={'src/assets/Star.png'} alt="rating-star"/>
                     {rating}
                 </Clarification>
             </Container>

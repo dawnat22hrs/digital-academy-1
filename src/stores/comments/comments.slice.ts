@@ -1,6 +1,10 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+interface CommentsState {
+    currentComments: any[]
+}
+
+const initialState: CommentsState = {
     currentComments: []
 }
 
@@ -8,10 +12,10 @@ export const commentsSlice = createSlice({
     name: 'comments',
     initialState,
     reducers: {
-        defineComments: (state, action) => {
+        defineComments: (state, action: PayloadAction<any[]>) => {
             state.currentComments = action.payload
         },
-        pushComment: (state, action) => {
+        pushComment: (state, action: PayloadAction<any>) => {
             state.currentComments.push(action.payload)
         }
         

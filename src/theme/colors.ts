@@ -1,4 +1,3 @@
-
 export const COLORS = {
   white100: '#FFFFFF',
   white_10: '#FAFAFA',

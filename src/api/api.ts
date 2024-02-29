@@ -1,18 +1,25 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const URL = 'https://dummyjson.com'
+
 export const api = createApi({
     reducerPath: 'api',
-    // tagTypes: ['Recipe'],
     baseQuery: fetchBaseQuery({
         baseUrl: URL,
+        validateStatus: (response) => {
+            if (response.status >= 200 && response.status < 300) {
+              return true
+            } else {
+              throw new Error(`HTTP Error ${response.statusText}`)
+            }
+          },
     }),
     endpoints: builder => ({
         getRecipes: builder.query({
             query: () => '/recipes/meal-type/snack'
         }),
         getComments: builder.query({
-            query: ()=> '/comments'
+            query: () => '/comments'
         }),
         getCommentByPostId: builder.query({
             query: (id: number) => `/comments/post/${id}`
