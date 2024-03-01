@@ -3,7 +3,7 @@ import {IPostItem} from "../types/interfaces.ts";
 import {Link} from "react-router-dom";
 import {getHashtags} from "../utils/utils.ts";
 import {Reaction} from "./Reaction.tsx";
-import {SubtitleTelegrey, Body} from "../utils/style.ts";
+import {SubtitleTelegrey, Body} from "../atoms/style.ts";
 import { UserOneArtical } from "./UserOneArtical.tsx";
 import { useGetSingleUserQuery } from "../api/api.ts";
 

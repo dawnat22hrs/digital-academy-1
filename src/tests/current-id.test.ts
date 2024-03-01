@@ -10,7 +10,7 @@ describe('getCurrentId', () => {
     })
 
     const result = getCurrentId()
-    expect(result).toEqual("123")
+    expect(result).toEqual(123)
 
     Object.defineProperty(window, 'location', {
       writable: true,

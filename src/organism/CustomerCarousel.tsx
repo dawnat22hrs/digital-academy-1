@@ -13,15 +13,15 @@ const slidesContainerStyles = {
 
 export const CustomerCarousel = () => {
     const {data} = useGetCommentsQuery(null)
-    const sortedData = data?.comments.slice(0, 6)
+    const commets = data?.comments
     const timerRef = useRef<number>(0)
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const goToNext = useCallback(() => {
-        const isLastSlide = currentIndex === sortedData?.length - 1
+        const isLastSlide = currentIndex === commets.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
         setCurrentIndex(newIndex)
-    }, [currentIndex, sortedData])
+    }, [currentIndex, commets])
 
     const goToSlide = (slideIndex: number) => {
         setCurrentIndex(slideIndex)
@@ -52,11 +52,11 @@ export const CustomerCarousel = () => {
                             <>
                                 <Container>
                                     <Item style={getSlidesContainerStylesWithWidth()}>
-                                        {sortedData?.map((item: ICarouselItem) =>( <CommentsItem {...item} key={item.id}/>))}
+                                        {commets.map((item: ICarouselItem) =>( <CommentsItem {...item} key={item.id}/>))}
                                     </Item>
                                 </Container>
                                 <DotContainer>
-                                    {sortedData?.map((slide: ICarouselItem, slideIndex: number) => (
+                                    {commets.map((slide: ICarouselItem, slideIndex: number) => (
                                         <Dot
                                             key={slide.id}
                                             onClick={() => goToSlide(slideIndex)}

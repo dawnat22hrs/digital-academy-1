@@ -16,22 +16,28 @@ export const api = createApi({
     }),
     endpoints: builder => ({
         getRecipes: builder.query({
-            query: () => '/recipes/meal-type/snack'
+            query: () => '/recipes/meal-type/snack',
+            keepUnusedDataFor: 5 * 60 * 1000,
         }),
         getComments: builder.query({
-            query: () => '/comments'
+            query: () => '/comments?limit=6',
+            keepUnusedDataFor: 5 * 60 * 1000,
         }),
         getCommentByPostId: builder.query({
-            query: (id: number) => `/comments/post/${id}`
+            query: (id: number) => `/comments/post/${id}`,
+            keepUnusedDataFor: 5 * 60 * 1000,
         }),
         getPosts: builder.query({
-            query: (body: { limitValue: number, skipValue: number}) => `/posts?limit=${body.limitValue}&skip=${body.skipValue}&select=title,reactions,userId,body,tags`
+            query: (body: { limitValue: number, skipValue: number}) => `/posts?limit=${body.limitValue}&skip=${body.skipValue}&select=title,reactions,userId,body,tags`,
+            keepUnusedDataFor: 5 * 60 * 1000,
         }),
         getSinglePost: builder.query({
-            query: (id: number | string) => `/posts/${id}`
+            query: (id: number | string) => `/posts/${id}`,
+            keepUnusedDataFor: 5 * 60 * 1000,
         }),
         getSingleUser: builder.query({
-            query: (id: number) => `/users/${id}`
+            query: (id: number) => `/users/${id}`,
+            keepUnusedDataFor: 5 * 60 * 1000,
         }),
         createComment: builder.mutation({
             query: comment => ({

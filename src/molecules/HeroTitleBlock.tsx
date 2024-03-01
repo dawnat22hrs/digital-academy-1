@@ -1,5 +1,5 @@
 import {HeroTitle} from "../atoms/HeroTitle.tsx";
-import {SelectWord} from "../utils/style.ts";
+import {SelectWord} from "../atoms/style.ts";
 import styled from "@emotion/styled";
 import {Button, BUTTON_VARIANT} from "../atoms/Button";
 

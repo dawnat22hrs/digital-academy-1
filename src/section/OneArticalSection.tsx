@@ -15,7 +15,7 @@ export const OneArticalSection = () => {
     return (
         <Section data={data}>
             {
-                data
+                data 
                     ?
                         <>
                             <HeaderOneArticles {...data}/>
@@ -29,13 +29,15 @@ export const OneArticalSection = () => {
                             <AddComments />
                         </>
                     :
-                        <LoaderBlock>
-                            <ClipLoader
-                                color={'#000'}
-                                size={'40px'}
-                            />
-                            <Button variant={BUTTON_VARIANT.SECONDARY} startIcon={<ReverseArrow><ArrowRight/></ReverseArrow>}>All Articles</Button>
-                        </LoaderBlock>
+                        Number(getCurrentId()) ?
+                            <LoaderBlock>
+                                <ClipLoader
+                                    color={'#000'}
+                                    size={'40px'}
+                                />
+                                <Button variant={BUTTON_VARIANT.SECONDARY} startIcon={<ReverseArrow><ArrowRight/></ReverseArrow>}>All Articles</Button>
+                            </LoaderBlock>
+                        : 'Ошибка! Некорректный id'
             }
         </Section>
     )

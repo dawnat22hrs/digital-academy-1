@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import {CategoryChip} from "../atoms/categoryChip";
 import {IRecipesCard} from "../types/interfaces.ts";
+import { RecipesTextContainer } from "../molecules/RecipesTextContainer.tsx";
+import { RecipesClarification } from "../molecules/RecipesClarification.tsx";
 
 export const RecipesCard = ({image, categoryChip, rating, cookTimeMinutes, name}:IRecipesCard) => {
     return (
@@ -8,17 +10,8 @@ export const RecipesCard = ({image, categoryChip, rating, cookTimeMinutes, name}
             <HeroImg src={image} alt="recipe-image"/>
             <Container>
                 <CategoryChip variant={categoryChip} />
-                <TextContainer>
-                    <Title>{name}</Title>
-                    <AddMark id="mark" data-testid="bookmark">
-                        <BookMark src={'src/assets/Book Mark.png'} alt="bookmark"/>
-                    </AddMark>
-                </TextContainer>
-                <Clarification>
-                    <Time>{cookTimeMinutes}min</Time>
-                    <RatingImg src={'src/assets/Star.png'} alt="rating-star"/>
-                    {rating}
-                </Clarification>
+                <RecipesTextContainer name={name}/>
+                <RecipesClarification rating={rating} cookTimeMinutes={cookTimeMinutes}/>
             </Container>
         </Card>
     )
@@ -48,50 +41,5 @@ const HeroImg = styled.img`
   border-radius: 30.02px 30.02px 0 0;
 `
 const Container = styled.div`
-    padding: 11.17px 26.73px 17.98px 33px;
-`
-const TextContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.3s;
-`
-const Title = styled.span`
-  font-family: Poppins;
-  font-size:20px;
-  font-weight: 600;
-  line-height: 42px;
-  color: #323142;
-  white-space: nowrap;
-`
-const Clarification = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 150px;
-  font-family: Manrope;
-  font-size: 19px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #8E97A6;
-`
-const Time = styled.li`
-  direction: rtl;
-  float: left;
-`
-const RatingImg = styled.img``
-
-const AddMark = styled.div`
-  width: 40.09px;
-  height: 40.09px;
-  background: #DBD9EE;
-  border-radius: 50%;
-  visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`
-const BookMark = styled.img`
-  cursor: pointer;
+  padding: 11.17px 26.73px 17.98px 33px;
 `

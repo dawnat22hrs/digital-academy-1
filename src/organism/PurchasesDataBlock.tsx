@@ -17,12 +17,10 @@ const model = [
 export const PurchasesDataBlock = () => {
     return (
         <Wrapper>
-                <Header>
-                    <Title>
-                        Purchases
-                    </Title>
-                    <DropDown />
-                </Header>
+            <Header>
+                <Title>Purchases</Title>
+                <DropDown />
+            </Header>
             <Main>
                 {
                     model.map((item, id) => (<PurchasesItem {...item} key={id}/>))

@@ -41,10 +41,10 @@ export const BlogPosts = () => {
 
             <PaginationBlock>
                 <Prev onClick={() => currentPage === 1 ? null : controlTable(CONTROL_PAGE.PREV)} disable={currentPage === 1}>
-                    <PaginationArrow />
+                    <PaginationArrow/>
                 </Prev>
-                <Next onClick={() =>  checkDisable() ? null : controlTable (CONTROL_PAGE.NEXT)} disable={checkDisable()} data-testid="next-btn" disabled={!checkDisable()}>
-                    <PaginationArrow />
+                <Next onClick={() =>  checkDisable() ? null : controlTable (CONTROL_PAGE.NEXT)} disable={checkDisable()}>
+                    <PaginationArrow/>
                 </Next>
             </PaginationBlock>
         </Wrapper>
@@ -71,7 +71,7 @@ const PaginationBlock = styled.div`
   justify-content: space-between;
   margin-top: 85px;
 `
-const Next = styled.button<{disable: boolean | undefined}>`
+const Next = styled.div<{disable: boolean | undefined}>`
   color: ${props => props.disable ? '#CECECE' : '#605E5E'};
 `
 const Prev = styled.div<{disable: boolean}>`

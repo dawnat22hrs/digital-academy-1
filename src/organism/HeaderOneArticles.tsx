@@ -1,4 +1,4 @@
-import {Title45} from "../utils/style.ts";
+import {Title45} from "../atoms/style.ts";
 import styled from "@emotion/styled";
 import {IPostItem} from "../types/interfaces.ts";
 import {useGetSingleUserQuery} from "../api/api.ts";

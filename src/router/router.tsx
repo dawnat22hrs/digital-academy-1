@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/HomePage.tsx";
-import {Blog} from "../pages/Blog.tsx";
-import {OneArtical} from "../pages/OneArtical.tsx";
+import HomePage from "../template/HomePage.tsx";
+import {Blog} from "../template/Blog.tsx";
+import {OneArtical} from "../template/OneArtical.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         element: <Blog />,
     },
     {
-        path: "/artical/*",
+        path: "/artical/:id",
         element: <OneArtical />,
     },
 ])

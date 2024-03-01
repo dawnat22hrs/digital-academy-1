@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import {RecipesCard} from "../organism/RecipesCard.tsx";
-import {SelectWord, Title45} from "../utils/style.ts";
+import {SelectWord, Title45} from "../atoms/style.ts";
 import {useGetRecipesQuery} from "../api/api.ts";
 import {ClipLoader} from "react-spinners";
 import {IRecipesCard} from "../types/interfaces.ts";

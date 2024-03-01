@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { SelectWord } from "../utils/style"
+import { SelectWord } from "../atoms/style"
 import { BUTTON_VARIANT, Button } from "../atoms/Button"
 import { BUTTON_SIZE } from "../atoms/Button/types/enum"
 import { useState } from "react"

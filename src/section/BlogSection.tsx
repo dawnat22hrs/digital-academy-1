@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {SelectWord, Title45} from "../utils/style.ts";
+import {SelectWord, Title45} from "../atoms/style.ts";
 import {BlogPosts} from "../organism/BlogPosts.tsx";
 
 export const BlogSection = () => {

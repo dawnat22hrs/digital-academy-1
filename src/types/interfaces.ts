@@ -1,5 +1,4 @@
-import {CATEGORY_VARIANT} from "../atoms/categoryChip";
-import {COMMENTS_VARIANT} from "../molecules/CarouselItem";
+import {COMMENTS_VARIANT} from "../molecules/CarouselItem"
 
 export interface ICarouselItem {
     body: string,
