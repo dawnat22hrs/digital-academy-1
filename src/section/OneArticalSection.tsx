@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import {ClipLoader} from "react-spinners";
 import {CommentsOneArtical} from "../organism/CommentsOneArtical.tsx";
 import {ArrowRight} from "../assets/ArrowRight.tsx";
+import { AddComments } from "../molecules/AddComments.tsx";
 
 export const OneArticalSection = () => {
     const {data} = useGetSinglePostQuery(getCurrentId())
@@ -14,7 +15,7 @@ export const OneArticalSection = () => {
     return (
         <Section data={data}>
             {
-                data
+                data 
                     ?
                         <>
                             <HeaderOneArticles {...data}/>
@@ -25,15 +26,18 @@ export const OneArticalSection = () => {
                                 <Link to={'/blog'} style={{textDecoration: 'none'}}><Button variant={BUTTON_VARIANT.SECONDARY} startIcon={<ReverseArrow><ArrowRight/></ReverseArrow>}>All Articles</Button></Link>
                             </ButtonBlock>
                             <CommentsOneArtical postId={data.id}/>
+                            <AddComments />
                         </>
                     :
-                        <LoaderBlock>
-                            <ClipLoader
-                                color={'#000'}
-                                size={'40px'}
-                            />
-                            <Button variant={BUTTON_VARIANT.SECONDARY} startIcon={<ReverseArrow><ArrowRight/></ReverseArrow>}>All Articles</Button>
-                        </LoaderBlock>
+                        Number(getCurrentId()) ?
+                            <LoaderBlock>
+                                <ClipLoader
+                                    color={'#000'}
+                                    size={'40px'}
+                                />
+                                <Button variant={BUTTON_VARIANT.SECONDARY} startIcon={<ReverseArrow><ArrowRight/></ReverseArrow>}>All Articles</Button>
+                            </LoaderBlock>
+                        : 'Ошибка! Некорректный id'
             }
         </Section>
     )

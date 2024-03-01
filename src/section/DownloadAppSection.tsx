@@ -1,5 +1,6 @@
-import styled from "@emotion/styled";
-import {AppTextBlock} from "../molecules/AppTextBlock.tsx";
+import styled from "@emotion/styled"
+import {AppTextBlock} from "../organism/AppTextBlock.tsx"
+import { Mobile } from "../atoms/style.ts"
 
 export const DownloadAppSection = () => {
     return (
@@ -17,8 +18,4 @@ const Section = styled.section`
   width: 1151px;
   justify-content: space-between;
   align-items: end;
-`
-const Mobile = styled.img`
-  width: 371.46px;
-  height: 625px;
 `

@@ -1,4 +1,3 @@
-
 export const COLORS = {
   white100: '#FFFFFF',
   white_10: '#FAFAFA',
@@ -27,6 +26,7 @@ export const COLORS = {
   deepYellowPink: '#F1534E',
   telegrey: '#8D8D8D',
   manatee: '#8E97A6',
+  light_gray: '#B6B6B6',
 }
 
 export type Colors = {[Property in keyof typeof COLORS]: string};

@@ -1,4 +1,4 @@
-import {SelectWord, Title50} from "../utils/style.ts";
+import {SelectWord, Title50} from "../atoms/style.ts";
 import styled from "@emotion/styled";
 import {PurchasesCard} from "../molecules/PurchasesCerd/PurchasesCard.tsx";
 import {PURCHASES_STATUS} from "../molecules/PurchasesCerd/types/enum.ts";

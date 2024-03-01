@@ -29,7 +29,7 @@ export const BlogPosts = () => {
                     ?
                         <BlogsItems>
                             {
-                                    data.posts.map((item: IPostItem) => <PostItem key={item.id} {...item}/>)
+                                    data.posts.map((item: IPostItem) => <PostItem data-testid="post-item" key={item.id} {...item}/>)
                             }
                         </BlogsItems>
                     :
@@ -41,10 +41,10 @@ export const BlogPosts = () => {
 
             <PaginationBlock>
                 <Prev onClick={() => currentPage === 1 ? null : controlTable(CONTROL_PAGE.PREV)} disable={currentPage === 1}>
-                    <PaginationArrow />
+                    <PaginationArrow/>
                 </Prev>
                 <Next onClick={() =>  checkDisable() ? null : controlTable (CONTROL_PAGE.NEXT)} disable={checkDisable()}>
-                    <PaginationArrow />
+                    <PaginationArrow/>
                 </Next>
             </PaginationBlock>
         </Wrapper>

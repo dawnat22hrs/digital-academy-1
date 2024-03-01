@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import {FAQ} from "../organism/FAQ.tsx";
-import {FAQTitleBlock} from "../molecules/FAQTitleBlock.tsx";
+import { FAQTitleBlock } from "../molecules/FAQTitleBlolck.tsx";
 
 export const FAQSection = () => {
     return (

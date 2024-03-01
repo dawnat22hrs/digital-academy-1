@@ -3,18 +3,24 @@ import {IPostItem} from "../types/interfaces.ts";
 import {Link} from "react-router-dom";
 import {getHashtags} from "../utils/utils.ts";
 import {Reaction} from "./Reaction.tsx";
-import {SubtitleTelegrey, Body} from "../utils/style.ts";
+import {SubtitleTelegrey, Body} from "../atoms/style.ts";
+import { UserOneArtical } from "./UserOneArtical.tsx";
+import { useGetSingleUserQuery } from "../api/api.ts";
 
-export const PostItem = ({title, tags, reactions,body, id}: IPostItem) => {
+export const PostItem = ({title, tags, reactions,body, id, userId}: IPostItem) => {
+  const {data} = useGetSingleUserQuery(userId)
     return (
         <Link to={`/artical/${id}`} style={{textDecoration: 'none'}}>
-        <Item>
+        <Item  data-testid="post-item">
             <TitleBlock>
                 <Title>{title}</Title>
             </TitleBlock>
             <TagsRatingWrapper>
+              <UserOneArtical {...data}/>
+              <Reaction reactions={reactions}/>
+            </TagsRatingWrapper>
+            <TagsRatingWrapper>
                 <SubtitleTelegrey>{getHashtags(tags)}</SubtitleTelegrey>
-                <Reaction reactions={reactions}/>
             </TagsRatingWrapper>
             <BodyBlock>
                 <Body>
@@ -28,7 +34,7 @@ export const PostItem = ({title, tags, reactions,body, id}: IPostItem) => {
 
 const Item = styled.div`
   width: 349px;
-  height: 233px;
+  height: 270px;
   border-radius: 15.85px;
   box-shadow: 0px 3.9053337574005127px 46.86400604248047px 0px #C5C5C540;
   cursor: pointer;
@@ -59,6 +65,7 @@ const TagsRatingWrapper = styled.div`
 const BodyBlock = styled.div`
   width: 305px;
   height: 83px;
+  margin-top: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

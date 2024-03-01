@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {SelectWord} from "../utils/style.ts";
+import {SelectWord} from "./style.ts";
 
 export const HeroTitle = () => {
     return (

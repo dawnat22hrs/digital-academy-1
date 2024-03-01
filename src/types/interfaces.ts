@@ -1,5 +1,4 @@
-import {CATEGORY_VARIANT} from "../atoms/categoryChip";
-import {COMMENTS_VARIANT} from "../molecules/CarouselItem";
+import {COMMENTS_VARIANT} from "../molecules/CarouselItem"
 
 export interface ICarouselItem {
     body: string,
@@ -29,7 +28,7 @@ export interface IRecipesCard {
     servings?: number,
     tags?: string[],
     userId?: number,
-    categoryChip?: CATEGORY_VARIANT | null,
+    categoryChip?: any,
 }
 
 export interface IPostItem {

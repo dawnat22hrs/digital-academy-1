@@ -2,6 +2,10 @@ import styled from "@emotion/styled";
 import {useGetCommentByPostIdQuery} from "../api/api.ts";
 import {CommentsItem} from "../molecules/CarouselItem/CarouselItem.tsx";
 import {COMMENTS_VARIANT} from "../molecules/CarouselItem";
+import { useEffect } from "react";
+import { useAction } from "../hooks/useAction.ts";
+import { useSelector } from "react-redux";
+import { ICarouselItem } from "../types/interfaces.ts";
 
 interface ICommentsOneArtical {
     postId: number
@@ -9,12 +13,19 @@ interface ICommentsOneArtical {
 export const CommentsOneArtical = ({postId}: ICommentsOneArtical) => {
     const {data} = useGetCommentByPostIdQuery(postId)
     const comments = data ?  [...data.comments] : []
+    const {defineComments} = useAction()
+    const {currentComments} = useSelector((state: any) => state.comments)
+
+    useEffect(() => {
+        (defineComments(comments))
+    }, [data])
+
     return (
         <Wrapper>
             <Title>Comments</Title>
             <CommentsBlock>
                 {
-                    comments.map((item) => <CommentsItem key={item.id} {...item} variant={COMMENTS_VARIANT.LARGE}/>)
+                    currentComments?.map((item: ICarouselItem, id: number) => <CommentsItem key={id} {...item} variant={COMMENTS_VARIANT.LARGE}/>)
                 }
             </CommentsBlock>
         </Wrapper>

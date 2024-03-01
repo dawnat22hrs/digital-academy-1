@@ -1,10 +1,13 @@
 import {ButtonVariant} from "./style.ts";
 import {IButton} from "./types/interface.ts";
 import styled from "@emotion/styled";
-export const Button = ({variant, children, endIcon, startIcon}: IButton) => {
+export const Button = ({variant, children, endIcon, startIcon, size, onClick}: IButton) => {
     const BaseButton = ButtonVariant[variant]
     return (
-        <BaseButton>
+        <BaseButton
+            size={size}
+            onClick={onClick}
+        >
             {startIcon && <StartIcon>{startIcon}</StartIcon>}
             {children}
             {endIcon && <EndIcon>{endIcon}</EndIcon>}

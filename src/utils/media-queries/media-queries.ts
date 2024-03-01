@@ -8,7 +8,7 @@ const breakpoints: TBreakpoint = {
   DesktopMax: [1920],
 };
 
-const getMediaQueries = () => Object.keys(breakpoints).reduce(
+export const getMediaQueries = () => Object.keys(breakpoints).reduce(
   (previousValue: {[name: string]: string}, currentValue: string) => {
     const [minWidth, maxWidth] = breakpoints[currentValue]
     let fullMediaQuery = 'screen'

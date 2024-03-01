@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import {Avatar} from "../atoms/Avatar.tsx";
-import {SubtitleTelegrey, Body} from "../utils/style.ts";
+import {SubtitleTelegrey, Body} from "../atoms/style.ts";
 export const UserOneArtical = ({image, firstName, lastName}:any) => {
     return (
         <UserWrapper>
@@ -23,4 +23,5 @@ const TextBlock = styled.div`
   flex-direction: column;
   align-items: start;
   margin-left: 14.24px;
+  white-space: nowrap;
 `
